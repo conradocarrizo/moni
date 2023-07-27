@@ -107,6 +107,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# 3rd Party APIS
+
+# Moni
+
+MONI_KEY = os.environ.get("MONI_KEY")
+MONI_URL = os.environ.get("MONI_URL")
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

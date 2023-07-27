@@ -1,6 +1,8 @@
 asgiref==3.7.2
 black==23.7.0
+certifi==2023.7.22
 cfgv==3.3.1
+charset-normalizer==3.2.0
 click==8.1.6
 distlib==0.3.7
 dj-database-url==2.0.0
@@ -9,6 +11,7 @@ exceptiongroup==1.1.2
 filelock==3.12.2
 flake8==6.0.0
 identify==2.5.26
+idna==3.4
 iniconfig==2.0.0
 mccabe==0.7.0
 mirakuru==2.5.1
@@ -30,7 +33,9 @@ pytest-django==4.5.2
 pytest-postgresql==5.0.0
 python-dotenv==1.0.0
 PyYAML==6.0.1
+requests==2.31.0
 sqlparse==0.4.4
 tomli==2.0.1
 typing_extensions==4.7.1
+urllib3==2.0.4
 virtualenv==20.24.2
