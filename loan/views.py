@@ -33,7 +33,7 @@ class LoanCreateView(CreateView):
     model = Loan
     template_name = "loan/loan_create.html"
     form_class = LoanForm
-
+    ordering = ["id"]
     success_url = reverse_lazy("landing_page")
 
     gender_choices_es = {
