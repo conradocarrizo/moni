@@ -9,6 +9,7 @@
     <form method="post">
         {% csrf_token %}
         {% for field in form %}
+        {% if field.name != 'dni' %}
         <div class="form-group">
             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
             {{ field }}
@@ -16,6 +17,12 @@
             <p class="text-danger mb-0">{{ error }}</p>
             {% endfor %}
         </div>
+        {% else %}
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" name="dni" value="{{ object.dni }}" readonly>
+        </div>
+        {% endif %}
         {% endfor %}
         <div class="d-flex justify-content-end">
             <a href="{% url 'loan_list' %}" class="btn btn-secondary mr-2">Cancelar</a>
