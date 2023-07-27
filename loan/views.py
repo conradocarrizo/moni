@@ -34,7 +34,7 @@ class LoanCreateView(CreateView):
     template_name = "loan/loan_create.html"
     form_class = LoanForm
 
-    success_url = reverse_lazy("loan_list")
+    success_url = reverse_lazy("landing_page")
 
     gender_choices_es = {
         "Male": "Masculino",

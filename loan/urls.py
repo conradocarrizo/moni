@@ -18,7 +18,7 @@ urlpatterns = [
         ),
         name="login",
     ),
-    path("new/", LoanCreateView.as_view(), name="new-loan"),
+    path("new/", LoanCreateView.as_view(), name="new_loan"),
     path("logout/", custom_logout, name="logout"),
     path("landing/", LandingPageView.as_view(), name="landing_page"),
     path("loans/", LoanListView.as_view(), name="loan_list"),
