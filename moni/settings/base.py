@@ -115,6 +115,14 @@ MONI_KEY = os.environ.get("MONI_KEY")
 MONI_URL = os.environ.get("MONI_URL")
 
 
+# Celery
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_RESULT_BACKEND")
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

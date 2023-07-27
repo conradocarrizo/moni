@@ -3,6 +3,7 @@ from django.forms import ValidationError
 import requests
 from utils.validators import dni_validator
 from services.moni.exceptions import APINotConfiguredError, APIValidationError
+from loan.tasks import extra_functions
 
 
 class MoniClient:
@@ -36,6 +37,8 @@ class MoniClient:
         headers = {"credential": self.CREDENTIAL}
 
         response = requests.get(endpoint, headers=headers)
+
+        extra_functions.delay(dni)
 
         if response.status_code == 200:
             return response.json()
