@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 mb-4"> Prestamos Moni</h1>
+    {% if user.is_authenticated %}
+    <p>Hola, {{ user.username }}. ¡Bienvenido de nuevo!</p>
+    {% else %}
+    <p>Para continuar, inicia sesión:</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+    {% endif %}
+</div>
+{% endblock %}
