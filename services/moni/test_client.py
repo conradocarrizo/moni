@@ -1,5 +1,4 @@
 import pytest
-from unittest.mock import patch
 from services.moni.moni_client import (
     MoniClient,
     APIValidationError,
@@ -19,12 +18,15 @@ def moni_client():
         ("abc12345", False),
     ],
 )
-@patch("services.moni.moni_client.MoniClient.get_pre_score")
 def test_check_pre_score(monkeypatch, dni, expected_status, moni_client):
     def mock_get_pre_score(dni):
         return {"status": "approve", "has_error": False}
 
+    def mock_is_not_config():
+        return True
+
     monkeypatch.setattr(moni_client, "get_pre_score", mock_get_pre_score)
+    monkeypatch.setattr(moni_client, "is_not_config", mock_is_not_config)
 
     if expected_status:
         assert moni_client.check_pre_score(dni)
